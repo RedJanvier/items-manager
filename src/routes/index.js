@@ -1,9 +1,8 @@
-const { Router } = require('express');
+const express = require("express")
+const router = express.Router()
+const itemsController = require('../controllers/items')
 
-const router = Router();
-
-router.use('/', (req, res) => {
-  res.status(200).json({ status: 200, message: 'Test successful' });
-});
+router.post('/items', itemsController.createItem)
+router.get('/items', itemsController.findItems)
 
 module.exports = router;
