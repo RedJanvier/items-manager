@@ -1,4 +1,4 @@
-const models = require('../database/models/item')
+const models = require('../database/models/index').Item
 
 
 const getItemById = async (req, res) => {
@@ -23,7 +23,7 @@ const getItemById = async (req, res) => {
         where: { id: itemId }
       });
       if (deleted) {
-        return res.status(204).send("Item deleted");
+        return res.status(200).send("Item deleted");
       }
       throw new Error("Item not found");
     } catch (error) {

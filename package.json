@@ -7,7 +7,7 @@
     "start": "node src",
     "migrate": "sequelize db:migrate",
     "seed": "sequelize db:seed:all",
-    "db:init": "(dropdb --if-exists dev_db_items && createdb dev_db_items) && npm run migrate && npm run seed",
+    "db:init": "(dropdb --if-exists siyubu && createdb siyubu) && npm run migrate && npm run seed",
     "dev": "nodemon src"
   },
   "repository": {
