@@ -7,11 +7,12 @@ exports.createItem = async(req, res) => {
 
         if (!category) return res.status(400).send({ error: "Please provide a category" })
 
-        Item.create({
+        const item= await Item.create({
             name,
-            category
+            category,
+            taken:false
         })
-        res.status(201).send({ data: { name, category } })
+        res.status(201).send({ data: item })
 
     }
     // Retrieve all items
