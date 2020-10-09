@@ -1,40 +1,48 @@
 {
-    "name": "items-manager",
-    "version": "1.0.0",
-    "description": "Manage Items with this simple API",
-    "main": "index.js",
-    "scripts": {
-        "start": "node src",
-        "migrate": "sequelize db:migrate",
-        "seed": "sequelize db:seed:all",
-        "db:init": "(dropdb --if-exists dev_db_items && createdb dev_db_items) && npm run migrate && npm run seed",
-        "dev": "nodemon src"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/RedJanvier/items-manager.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/RedJanvier/items-manager/issues"
-    },
-    "homepage": "https://github.com/RedJanvier/items-manager#readme",
-    "devDependencies": {
-        "eslint-config-airbnb-base": "^14.2.0",
-        "eslint-config-prettier": "^6.12.0",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-prettier": "^3.1.4",
-        "nodemon": "^2.0.4"
-    },
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "pg": "^8.4.0",
-        "pg-hstore": "^2.3.3",
-        "sequelize": "^6.3.5",
-        "sequelize-cli": "^6.2.0"
-    }
+  "name": "items-manager",
+  "version": "1.0.0",
+  "description": "Manage Items with this simple API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "db:init": "(dropdb --if-exists dev_db_items && createdb dev_db_items) && npm run migrate && npm run seed",
+    "dev": "nodemon src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedJanvier/items-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "rest",
+    "api",
+    "postgresql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedJanvier/items-manager/issues"
+  },
+  "homepage": "https://github.com/RedJanvier/items-manager#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.4.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  }
 }
