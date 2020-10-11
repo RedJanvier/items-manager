@@ -1,7 +1,7 @@
-const db = require("../database/models/index")
-const Item = db.Item
+import { Item as _Item } from "../database/models/index"
+const Item = _Item
     // creating an item 
-exports.createItem = async(req, res) => {
+export async function createItem(req, res) {
         let { name, category } = req.body
         if (!name) return res.status(400).send({ error: "Please provide a name" })
 
@@ -16,8 +16,8 @@ exports.createItem = async(req, res) => {
 
     }
     // Retrieve all items
-exports.findItems = (req, res) => {
-    db.Item.findAll()
+export function findItems(req, res) {
+    _Item.findAll()
         .then(items => res.status(200).send({ data: items }))
         .catch(err => {
             res.status(400).send({ error: err })

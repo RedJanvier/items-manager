@@ -1,7 +1,7 @@
-const models = require('../database/models/index').Item
+import { Item as models } from '../database/models/index';
 
 
-const getItemById = async (req, res) => {
+export async function getItemById( req, res)  {
     try {
       const { itemId } = req.params;
       const item = await models.findOne({
@@ -16,7 +16,7 @@ const getItemById = async (req, res) => {
     }
   }
 
-  const deleteItem = async (req, res) => {
+  export async function deleteItem  (req, res)  {
     try {
       const { itemId } = req.params;
       const deleted = await models.destroy({
@@ -30,8 +30,3 @@ const getItemById = async (req, res) => {
       return res.status(500).send(error.message);
     }
   };
-
-  module.exports = {
-    getItemById,
-    deleteItem,
-  }

@@ -1,8 +1,8 @@
-const { config } = require('dotenv');
-const express = require('express');
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const routes = require('./routes');
+import { config } from 'dotenv';
+import express from 'express';
+import { json, urlencoded } from "body-parser";
+import cors from "cors";
+import routes from './routes';
 
 
 config();
@@ -13,9 +13,9 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 // parse requests of content-type - application/json
-app.use(bodyParser.json());
+app.use(json());
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(urlencoded({ extended: false }));
 app.use('/api', routes);
 app.listen(
     PORT,
