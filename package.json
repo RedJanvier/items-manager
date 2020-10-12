@@ -7,7 +7,7 @@
     "start": "node src",
     "migrate": "sequelize db:migrate",
     "seed": "sequelize db:seed:all",
-    "db:init": "(dropdb --if-exists dev_db_items && createdb dev_db_items) && npm run migrate && npm run seed",
+    "db:init": "(dropdb --if-exists frank && createdb frank) && npm run migrate && npm run seed",
     "dev": "nodemon src"
   },
   "repository": {
@@ -29,8 +29,10 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.4.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
